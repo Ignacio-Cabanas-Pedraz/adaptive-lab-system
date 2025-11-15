@@ -75,7 +75,7 @@ def draw_detections(frame, objects, mode):
 
         # Draw mask if available
         if 'mask' in obj and obj['mask'] is not None:
-            mask = obj['mask']
+            mask = obj['mask'].astype(bool)  # Convert to boolean for indexing
             # Create colored overlay
             overlay = annotated.copy()
             overlay[mask] = overlay[mask] * 0.5 + np.array(color) * 0.5
