@@ -60,15 +60,34 @@ apt-get install -y -qq \
 
 print_success "System dependencies installed"
 
+# Check disk space
+print_status "Checking disk space..."
+df -h /
+
+# Clean up space before installation
+print_status "Cleaning up disk space..."
+pip cache purge 2>/dev/null || true
+apt-get clean
+rm -rf /tmp/*
+print_success "Cleanup complete"
+
 # Upgrade pip
 print_status "Upgrading pip..."
-pip install --upgrade pip
+pip install --upgrade pip --no-cache-dir
 
-# Install Python dependencies
+# Install Python dependencies with no cache to save space
 print_status "Installing Python dependencies (this may take a few minutes)..."
-pip install -r requirements.txt
+print_status "Using --no-cache-dir to minimize disk usage"
+pip install --no-cache-dir -r requirements.txt
 
 print_success "Python dependencies installed"
+
+# Clean up after installation
+print_status "Cleaning up post-installation..."
+pip cache purge 2>/dev/null || true
+apt-get clean
+rm -rf /tmp/*
+print_success "Post-installation cleanup complete"
 
 # Create necessary directories
 print_status "Creating directory structure..."
