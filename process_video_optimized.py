@@ -79,23 +79,36 @@ def draw_detections_fast(frame, objects, mode):
 
 def save_results_json(results, output_path):
     """Save detection results as JSON"""
+    def convert_to_python_type(obj):
+        """Convert numpy types to native Python types"""
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, (np.float32, np.float64)):
+            return float(obj)
+        elif isinstance(obj, (np.int32, np.int64)):
+            return int(obj)
+        elif isinstance(obj, list):
+            return [convert_to_python_type(item) for item in obj]
+        else:
+            return obj
+
     serializable_results = []
 
     for frame_result in results:
         frame_data = {
-            'frame_number': frame_result['frame_number'],
+            'frame_number': int(frame_result['frame_number']),
             'mode': frame_result['mode'],
-            'processing_time_ms': frame_result.get('actual_processing_time_ms', 0),
+            'processing_time_ms': float(frame_result.get('actual_processing_time_ms', 0)),
             'objects': []
         }
 
         for obj in frame_result['objects']:
             obj_data = {
                 'class': obj['class'],
-                'confidence': obj['confidence'],
-                'bbox': obj.get('bbox', []),
-                'center': obj.get('center', [0, 0]),
-                'area': obj.get('area', 0)
+                'confidence': float(obj['confidence']),
+                'bbox': convert_to_python_type(obj.get('bbox', [])),
+                'center': convert_to_python_type(obj.get('center', [0, 0])),
+                'area': float(obj.get('area', 0))
             }
             frame_data['objects'].append(obj_data)
 
