@@ -1,12 +1,12 @@
 """
 Adaptive Lab System - Multi-mode object detection and tracking
-Combines YOLO, SAM 2, and CLIP for flexible lab equipment detection
+Combines YOLOv9 (MIT license), SAM 2, and CLIP for flexible lab equipment detection
 """
 
 import torch
 import numpy as np
 from enum import Enum
-from ultralytics import YOLO
+from yolo_wrapper import YOLO  # MIT-licensed YOLOv9 wrapper
 from sam2.build_sam import build_sam2
 from sam2.sam2_image_predictor import SAM2ImagePredictor
 from sam2.automatic_mask_generator import SAM2AutomaticMaskGenerator
@@ -22,14 +22,14 @@ class SystemMode(Enum):
 
 
 class AdaptiveLabSystem:
-    def __init__(self, sam_checkpoint=None, sam_config=None, yolo_model='yolov8n.pt'):
+    def __init__(self, sam_checkpoint=None, sam_config=None, yolo_model='yolov9c.pt'):
         """
         Initialize all models once at startup
 
         Args:
             sam_checkpoint: Path to SAM 2 checkpoint (default: ./checkpoints/sam2.1_hiera_tiny.pt)
             sam_config: Path to SAM 2 config (default: ./configs/sam2.1/sam2.1_hiera_t.yaml)
-            yolo_model: YOLO model to use (default: yolov8n.pt for speed)
+            yolo_model: YOLOv9 model to use (default: yolov9c.pt - compact/balanced, MIT license)
         """
 
         print("=" * 60)
@@ -46,10 +46,10 @@ class AdaptiveLabSystem:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         print(f"Using device: {self.device}")
 
-        # YOLO for fast detection
-        print("\nLoading YOLO model...")
+        # YOLOv9 for fast detection (MIT license)
+        print("\nLoading YOLOv9 model (MIT license)...")
         self.yolo = YOLO(yolo_model)
-        print(f"✓ YOLO {yolo_model} loaded")
+        print(f"✓ YOLOv9 {yolo_model} loaded (MIT license)")
 
         # SAM 2 for segmentation
         print("\nLoading SAM 2 models...")
@@ -234,12 +234,12 @@ class AdaptiveLabSystem:
     def _tracking_mode(self, frame):
         """
         TRACKING MODE: Track known objects efficiently
-        Uses: YOLO + SAM 2 Prompted + CLIP
+        Uses: YOLOv9 + SAM 2 Prompted + CLIP
         Speed: ~50-100ms
         """
         print(f"[TRACKING] Frame {self.frame_count}")
 
-        # STEP 1: YOLO detects regions (~3ms)
+        # STEP 1: YOLOv9 detects regions (~3ms)
         with torch.inference_mode():
             yolo_results = self.yolo(frame, verbose=False)
 
@@ -256,7 +256,7 @@ class AdaptiveLabSystem:
                         'confidence': float(conf)
                     })
 
-        print(f"  YOLO found {len(detections)} regions")
+        print(f"  YOLOv9 found {len(detections)} regions")
 
         # STEP 2: SAM 2 segments each region (~10ms per region)
         tracked_objects = []
@@ -300,12 +300,12 @@ class AdaptiveLabSystem:
     def _verification_mode(self, frame):
         """
         VERIFICATION MODE: Quick yes/no checks
-        Uses: YOLO + CLIP (no SAM 2)
+        Uses: YOLOv9 + CLIP (no SAM 2)
         Speed: ~5-10ms
         """
         print(f"[VERIFICATION] Frame {self.frame_count}")
 
-        # STEP 1: YOLO detects (~3ms)
+        # STEP 1: YOLOv9 detects (~3ms)
         with torch.inference_mode():
             yolo_results = self.yolo(frame, verbose=False)
 

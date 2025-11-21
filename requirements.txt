@@ -4,8 +4,10 @@ torchvision>=0.15.0
 numpy>=1.24.0
 pillow>=9.5.0
 
-# YOLO
-ultralytics>=8.0.0
+# YOLOv9 (MIT-licensed WongKinYiu implementation)
+git+https://github.com/WongKinYiu/YOLO.git
+hydra-core>=1.3.0
+omegaconf>=2.3.0
 
 # SAM 2
 git+https://github.com/facebookresearch/segment-anything-2.git
@@ -22,3 +24,14 @@ opencv-contrib-python>=4.8.0
 # Utilities
 tqdm>=4.65.0
 matplotlib>=3.7.0
+
+# Flask REST API
+flask>=2.3.0
+flask-cors>=4.0.0
+PyPDF2>=3.0.0
+
+# LLM Support (Llama 3 8B)
+transformers>=4.40.0
+accelerate>=0.28.0
+sentencepiece>=0.2.0
+# bitsandbytes>=0.43.0  # Only needed on Linux with CUDA for 8-bit quantization

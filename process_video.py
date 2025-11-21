@@ -26,8 +26,8 @@ def parse_args():
                         help='Path to SAM 2 checkpoint')
     parser.add_argument('--sam-config', type=str, default='./configs/sam2.1/sam2.1_hiera_t.yaml',
                         help='Path to SAM 2 config')
-    parser.add_argument('--yolo-model', type=str, default='yolov8n.pt',
-                        help='YOLO model to use (n/s/m/l)')
+    parser.add_argument('--yolo-model', type=str, default='yolov9c.pt',
+                        help='YOLOv9 model to use: t(tiny)/s(small)/m(medium)/c(compact)/e(extended) - MIT license')
     parser.add_argument('--skip-frames', type=int, default=1,
                         help='Process every Nth frame (1 = all frames)')
     parser.add_argument('--max-frames', type=int, default=None,

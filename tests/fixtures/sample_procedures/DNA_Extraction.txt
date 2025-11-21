@@ -1,0 +1,50 @@
+Step 1
+Transfer 500µL of each spit solution to another tube
+
+Step 2
+Incubate the samples at 50ºC for 90 minutes
+
+Step 3
+Transfer 500µL incubated samples into tubes with 20µL purifying solution
+
+Step 4
+Vibrate samples on the vortex
+
+Step 5
+Embed samples in ice for 10 minutes
+
+Step 6
+Centrifuge samples 5 minutes at 14500 rpm
+
+Step 7
+Transfer 400µL of supernatant DNA
+
+Step 8
+Precipitate the DNA solution by adding 400µL of 100% ethanol 
+
+Step 9
+Incubate at room temperature for 5 minutes
+
+Step 10
+Centrifuge for 2 minutes at 14500 rpm
+
+Step 11
+Discard all supernatant and leave behind the pellet
+
+Step 12
+Wash the pellet with 250µL of 70% ethanol while not disturbing the pellet
+
+Step 13
+Centrifuge the samples for 2 minutes at 14500 rpm
+
+Step 14
+Discard the supernatant leaving behind the pellet
+
+Step 15
+Dry the DNA pellet with Kim wipes by opening the samples, removing all remaining supernatant and leaving them open to dry for 20-30 minutes
+
+Step 16
+Once dry, resuspend the pellet in 100µL of Molecular Biology grade water 
+
+Step 17 
+Mix by vortexing until the pellet is dissolved in the solution

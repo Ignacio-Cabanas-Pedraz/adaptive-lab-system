@@ -1,0 +1,372 @@
+{
+  "template_id": "d8efaf5e",
+  "title": "DNA_Extraction",
+  "version": "1.0",
+  "created_by": "default_user",
+  "created_at": "2025-11-21T11:34:33.021613",
+  "modified_at": "2025-11-21T10:34:32.703908",
+  "metadata": {
+    "step_count": 17,
+    "estimated_duration": "22 minutes",
+    "completeness_score": 0.29411764705882354,
+    "llm_validated": false,
+    "status": "draft"
+  },
+  "steps": [
+    {
+      "step_number": 1,
+      "description": "Transfer 500\u00b5L of each spit solution to another tube",
+      "expected_action": "transfer",
+      "parameters": {
+        "volume": {
+          "value": 500.0,
+          "unit": "\u00b5L",
+          "raw": "500\u00b5L"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 2,
+      "description": "Incubate the samples at 50\u00baC for 90 minutes",
+      "expected_action": "wait",
+      "parameters": {
+        "duration": {
+          "value": 90.0,
+          "unit": "seconds",
+          "raw": "90 minutes"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": "wait",
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 3,
+      "description": "Transfer 500\u00b5L incubated samples into tubes with 20\u00b5L purifying solution",
+      "expected_action": "transfer",
+      "parameters": {
+        "volume": {
+          "value": 500.0,
+          "unit": "\u00b5L",
+          "raw": "500\u00b5L"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": "heat",
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 4,
+      "description": "Vibrate samples on the vortex",
+      "expected_action": "mix",
+      "parameters": {},
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 5,
+      "description": "Embed samples in ice for 10 minutes",
+      "expected_action": "cool",
+      "parameters": {
+        "duration": {
+          "value": 10.0,
+          "unit": "seconds",
+          "raw": "10 minutes"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 6,
+      "description": "Centrifuge samples 5 minutes at 14500 rpm",
+      "expected_action": "centrifuge",
+      "parameters": {
+        "duration": {
+          "value": 5.0,
+          "unit": "seconds",
+          "raw": "5 minutes"
+        },
+        "speed": {
+          "value": 14500.0,
+          "unit": "rpm",
+          "raw": "14500 rpm"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 7,
+      "description": "Transfer 400\u00b5L of supernatant DNA",
+      "expected_action": "transfer",
+      "parameters": {
+        "volume": {
+          "value": 400.0,
+          "unit": "\u00b5L",
+          "raw": "400\u00b5L"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 8,
+      "description": "Precipitate the DNA solution by adding 400\u00b5L of 100% ethanol",
+      "expected_action": "transfer",
+      "parameters": {
+        "volume": {
+          "value": 400.0,
+          "unit": "\u00b5L",
+          "raw": "400\u00b5L"
+        },
+        "concentration": {
+          "value": 100.0,
+          "unit": "%",
+          "raw": "100%"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 9,
+      "description": "Incubate at room temperature for 5 minutes",
+      "expected_action": "wait",
+      "parameters": {
+        "temperature": {
+          "value": "RT",
+          "unit": "\u00b0C",
+          "raw": "room temperature"
+        },
+        "duration": {
+          "value": 5.0,
+          "unit": "seconds",
+          "raw": "5 minutes"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": "wait",
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 10,
+      "description": "Centrifuge for 2 minutes at 14500 rpm",
+      "expected_action": "centrifuge",
+      "parameters": {
+        "duration": {
+          "value": 2.0,
+          "unit": "seconds",
+          "raw": "2 minutes"
+        },
+        "speed": {
+          "value": 14500.0,
+          "unit": "rpm",
+          "raw": "14500 rpm"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 11,
+      "description": "Discard all supernatant and leave behind the pellet",
+      "expected_action": "centrifuge",
+      "parameters": {},
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 12,
+      "description": "Wash the pellet with 250\u00b5L of 70% ethanol while not disturbing the pellet",
+      "expected_action": "centrifuge",
+      "parameters": {
+        "volume": {
+          "value": 250.0,
+          "unit": "\u00b5L",
+          "raw": "250\u00b5L"
+        },
+        "concentration": {
+          "value": 70.0,
+          "unit": "%",
+          "raw": "70%"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": "wash",
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 13,
+      "description": "Centrifuge the samples for 2 minutes at 14500 rpm",
+      "expected_action": "centrifuge",
+      "parameters": {
+        "duration": {
+          "value": 2.0,
+          "unit": "seconds",
+          "raw": "2 minutes"
+        },
+        "speed": {
+          "value": 14500.0,
+          "unit": "rpm",
+          "raw": "14500 rpm"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 14,
+      "description": "Discard the supernatant leaving behind the pellet",
+      "expected_action": "centrifuge",
+      "parameters": {},
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 15,
+      "description": "Dry the DNA pellet with Kim wipes by opening the samples, removing all remaining supernatant and leaving them open to dry for 20-30 minutes",
+      "expected_action": "centrifuge",
+      "parameters": {
+        "duration": {
+          "value": 30.0,
+          "unit": "seconds",
+          "raw": "30 minutes"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 16,
+      "description": "Once dry, resuspend the pellet in 100\u00b5L of Molecular Biology grade water",
+      "expected_action": "centrifuge",
+      "parameters": {
+        "volume": {
+          "value": 100.0,
+          "unit": "\u00b5L",
+          "raw": "100\u00b5L"
+        },
+        "count": {
+          "value": 1,
+          "unit": "repetitions",
+          "raw": "once"
+        }
+      },
+      "confidence": 0.3333333333333333,
+      "alternative_action": "dissolve",
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    },
+    {
+      "step_number": 17,
+      "description": "Mix by vortexing until the pellet is dissolved in the solution",
+      "expected_action": "mix",
+      "parameters": {},
+      "confidence": 0.6666666666666666,
+      "alternative_action": null,
+      "expected_objects": [],
+      "chemicals": [],
+      "equipment": [],
+      "safety": [],
+      "technique": "standard",
+      "llm_validated": false
+    }
+  ],
+  "post_procedure": [
+    "Wipe down work surface",
+    "Remove PPE and wash hands"
+  ]
+}
